@@ -243,24 +243,6 @@ public class DeviceUtil {
     }
 
     /**
-     * 批量生成AndroidID
-     *
-     * @param length 需要生成的个数
-     * @return
-     */
-    private static List<String> genAndroidID(int length) {
-        List<String> androidIDS = new ArrayList<String>();
-        for (int i = 0; i < length; i++) {
-            StringBuffer sb = new StringBuffer();
-            for (int j = 0; j < 15; j++) {
-                sb.append(Integer.toHexString(new Random().nextInt(16)));
-            }
-            androidIDS.add(sb.toString());
-        }
-        return androidIDS;
-    }
-
-    /**
      * 批量生成蓝牙地址
      *
      * @param length 个数
@@ -280,5 +262,25 @@ public class DeviceUtil {
         }
 
         return blueTooths;
+    }
+
+    /**
+     * 批量生成AndroidID
+     *
+     * @param length 生成个数
+     * @return
+     */
+    public static List<String> beachAndroidID(int length) {
+
+        List<String> androidIDs = new ArrayList<String>();
+
+        for (int i = 0; i < length; i++) {
+            StringBuffer sb = new StringBuffer();
+            for (int j = 0; j < 15; j++) {
+                sb.append(Integer.toHexString(new Random().nextInt(16)));
+            }
+            androidIDs.add(sb.toString());
+        }
+        return androidIDs;
     }
 }

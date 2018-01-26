@@ -62,19 +62,6 @@ public class deviceInfo {
         reader.close();
     }
 
-    private static void genricAndroidID() throws IOException {
-
-        FileWriter fileWriter = new FileWriter("C://Users//Administrator//Desktop/android.txt", true);
-        for (int i = 0; i < 1039607; i++) {
-            StringBuffer sb = new StringBuffer();
-            for (int j = 0; j < 15; j++) {
-                sb.append(Integer.toHexString(new Random().nextInt(16)));
-            }
-            fileWriter.write(sb + "\n");
-        }
-        fileWriter.close();
-    }
-
     private static void genMEID() throws IOException {
 
         FileWriter fileWriter = new FileWriter("C://Users//Administrator//Desktop/meid.txt", true);
